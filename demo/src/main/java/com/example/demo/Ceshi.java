@@ -5,6 +5,7 @@ public class Ceshi {
 		System.out.println("测试git");
 		int i = 9;
 		int j = 12;
-		System.out.println(i+j);
+        int k = 13;
+		System.out.println(i+j+k);
 	}
 }
