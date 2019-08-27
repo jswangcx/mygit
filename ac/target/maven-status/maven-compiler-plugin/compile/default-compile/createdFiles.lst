@@ -1,0 +1,15 @@
+com\ufgov\wcx\service\HouseRegisterService.class
+com\util\GenEntityOracle.class
+com\ufgov\configure\PortalTomcatWebServerCustomizer$1.class
+com\AcBootApplication.class
+com\ufgov\configure\CustomBean.class
+com\ufgov\wcx\dao\HouseRegisterDao.class
+com\ufgov\configure\MybatisConfig.class
+com\ufgov\configure\CustomBean$1.class
+com\ufgov\wcx\controller\HouseRegisterController.class
+com\ufgov\wcx\entity\HOUSE_REGISTER.class
+com\SwaggerConfig.class
+com\ufgov\ip\MyBatisDao.class
+com\util\ResultConstant.class
+com\ufgov\configure\PortalTomcatWebServerCustomizer.class
+com\ufgov\wcx\service\impl\HouseRegisterServiceImpl.class
