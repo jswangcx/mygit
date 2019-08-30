@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ufgov.wcx.dao.HouseRegisterDao">
+
+   <insert id="save" parameterType="map">
+        INSERT INTO HOUSE_REGISTER(ID,
+        ROOM_NUMBER, THE_NATURE_OF_HOUSE,TOTAL_AREA_OF_HOUSE,CURRENT_STATE)
+        VALUES(#{id}, #{roomName}, #{theNatureOfHouse}, #{totalAreaOfHouse},#{currentState})
+    </insert>
+
+    
+    <select id="select" resultType="map">
+    <!-- 建议将主键的别名定为key、不然前台浏览器的控制台会发出警告(不影响运行) -->
+    	  SELECT  
+    	  ID as "key",
+    	  ROOM_NUMBER as "roomNumber",
+    	  THE_NATURE_OF_HOUSE as "theNatureOfHouse",
+    	  TOTAL_AREA_OF_HOUSE as "totalAreaOfHouse",
+    	  CURRENT_STATE as "currentState"
+    	  FROM HOUSE_REGISTER
+    </select>
+    
+</mapper>

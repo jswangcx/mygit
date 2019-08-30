@@ -1,0 +1,49 @@
+app: 
+  db:
+    host: localhost
+    port: 1521
+    dbname: orcl
+    username: scott
+    password: 1
+    dbtype: oracle
+spring:
+  application:
+    name: ac111
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@${app.db.host}:${app.db.port}:${app.db.dbname}
+    username: ${app.db.username}
+    password: ${app.db.password}
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 100
+  output:
+    ansi:
+      enabled: ALWAYS
+logging: 
+  pattern:
+    #控制台日志输出格式
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%p] %logger{36}-> %m%n"
+  level:
+    root: INFO
+    com:
+      ufgov: DEBUG
+    org:
+      springframework: 
+        web: DEBUG
+        jdbc.core:
+          JdbcTemplate: DEBUG
+          StatementCreatorUtils: TRACE
+server: 
+  port: 8080
+mybatis: 
+  mapperLocations: classpath:/mappings/public/**/*.xml,classpath:/mappings/${app.db.dbtype}/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+pagehelper: 
+  offset-as-page-num: true
+  row-bounds-with-count: true 
+  page-size-zero: true
+  reasonable: true
+  params: pageNum=start;pageSize=limit;
+  support-methods-arguments: true
